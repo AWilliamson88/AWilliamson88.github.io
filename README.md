@@ -11,13 +11,13 @@ A collection of small JavaScript programs created whilst learning web developmen
 ## ScoreKeeper
 
 An app for keeper score in a ping pong game.
-
-![image of the score keeper app.](/ScoreKeeper/Images/scorekeeper1.png "Score Keeper app on page load.")
-
-![image of the score keeper app.](/ScoreKeeper/Images/scorekeeper2.png "Score Keeper app after finishing a game.")
+<p>
+<img src="/ScoreKeeper/Images/ScoreKeeper1.png" alt="Score keeper app on page load" height="400px" />
+<img src="/ScoreKeeper/Images/ScoreKeeper2.png" alt="Score keeper app after finishing a game." height="400px" />
+</p>
 
 ## TV Show Search
 
 Search an external API for your choice of shows.
 
-![image of the tv show search app.](/TVShowSearch/Images/tvshowsearch1.png "TV Show Search.")
+<img src="/TVShowSearch/Images/TVShowSearch.png" alt="image of the tv show search app." height="400px" />
