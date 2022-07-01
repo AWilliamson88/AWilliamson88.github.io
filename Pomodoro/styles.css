@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+}
+
+html,
+body {
+    background-color: darkgray;
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+}
+
+#mode-display {
+    color: green;
+}
+
+.fa {
+    font-size: 1.5em;
+}
+
+.pomodoro-container {
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 14px 28px;
+    padding: 5px 15px 15px 15px;
+}
+
+.pomodoro-clock {
+    display: flex;
+    flex-grow: 1;
+}
+
+.pomodoro-timer {
+    display: flex;
+    align-items: center;
+    flex-grow: 4;
+    justify-content: center;
+}
+
+.current-time {
+    font-size: 6em;
+}
+
+button {
+    flex-grow: 1;
+    margin: 0 2px;
+}
+
+.pomodoro-buttons {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+.start {
+    color: green;
+}
+
+.start.selected {
+    background-color: green;
+    border-color: green;
+}
+
+.pause {
+    color: royalblue;
+}
+
+.pause.selected {
+    background-color: royalblue;
+    border-color: royalblue;
+}
+
+.stop {
+    color: firebrick;
+}
+
+.stop.selected {
+    background-color: firebrick;
+    border-color: firebrick;
+}
+
+button.selected {
+    color: whitesmoke;
+}
