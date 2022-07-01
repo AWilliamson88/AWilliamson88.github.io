@@ -6,7 +6,8 @@ A collection of small JavaScript programs created whilst learning web developmen
 
 1. ScoreKeeper
 2. TV Show Search
-3. ...
+3. Pomodoro Timer
+4. ...
 
 ## ScoreKeeper
 
