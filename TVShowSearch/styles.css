@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 h1 {
     margin: 50px 0;
     text-align: center;
@@ -12,6 +19,7 @@ h1 {
 
 main {
     display: flex;
+    flex-grow: 1;
     justify-content: center;
 }
 
@@ -69,18 +77,48 @@ main {
     background-color: #aaaaaa;
 }
 
-.showdetails {
-    background-color: red;
-    display: flex;
+.showinfo {
+    background-color: rgb(255, 0, 0);
     flex-grow: 1;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+article header {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .showtitle {
     padding: 7px;
+    padding-bottom: 2px;
     font-size: 20px;
     color: white;
+}
+
+article header div {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.showdetails {
+    background-color: yellow;
+    min-height: 1rem;
+    font-size: 12px;
+    border-top: 1px solid black;
+}
+
+.sitefooter {
+    background-color: #aaaaaa;
+    min-height: 100px;
+    width: 100%;
 }
 
 @media (min-width: 1270px) {
