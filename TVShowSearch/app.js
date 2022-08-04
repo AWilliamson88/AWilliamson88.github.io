@@ -1,26 +1,29 @@
 const form = document.querySelector('#searchform');
 const tvShowDisplay = document.querySelector('.tvshowdisplay');
-const tvShow = document.querySelector(".tvshow");
+const tvShow = document.querySelector('.tvshow');
 
 form.addEventListener('submit', async function (e) {
 
     e.preventDefault();
 
-    const searchText = form.elements.title.value;
-    const config = { params: { q: searchText } }
+    await search();
+})
+
+const search = async () => {
 
     removeShows();
+    const searchText = form.elements.title.value;
+    const config = { params: { q: searchText } }
 
     try {
         const res = await axios.get(`https://api.tvmaze.com/search/shows`, config)
         showTVShows(res.data);
-        console.log(res);
     } catch (e) {
         console.log("Error, ", e);
     }
 
     form.elements.title.value = "";
-})
+}
 
 const showTVShows = (shows) => {
 
@@ -28,6 +31,8 @@ const showTVShows = (shows) => {
 
         const tvShow = document.createElement('DIV');
         tvShow.classList.add('tvshow');
+        tvShow.addEventListener('click', () => { openIMDB(result.show) });
+
 
         const img = addImage(result.show);
         const details = addShowInfo(result.show);
@@ -112,8 +117,10 @@ const addShowDetails = (show) => {
 const getYearsAired = (premiered, ended) => {
 
     const yearsAired = document.createElement('DIV');
-
-    let aired = `(${premiered.split('-')[0]}`;
+    let aired;
+    if (premiered) {
+        aired = `(${premiered.split('-')[0]}`;
+    }
 
     if (ended != null) {
         aired += ` - ${ended.split('-')[0]}`;
@@ -127,4 +134,9 @@ const removeShows = () => {
 
     const tvShows = document.querySelectorAll('.tvshow');
     tvShows.forEach((show) => show.remove());
+}
+
+const openIMDB = (show) => {
+
+    window.open(`https://imdb.com/title/${show.externals.imdb}/`, '_blank');
 }
