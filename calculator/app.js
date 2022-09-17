@@ -2,12 +2,19 @@ const calcBtns = document.querySelector('.calc-pad');
 const upper = document.querySelector('.upper');
 const lower = document.querySelector('.lower');
 
+
 const calc = {
     dispValue: '0',
     firstInput: null,
     waitForSecondInput: false,
     operator: null,
 };
+
+// Reset the display.
+const resetDisplay = () => {
+    lower.textContent = calc.dispValue;
+    upper.textContent = calc.firstInput;
+}
 
 // Update the display
 const updateDisp = () => {
@@ -18,6 +25,7 @@ const updateDisp = () => {
     }
 }
 updateDisp();
+
 
 // Add event listeners
 calcBtns.addEventListener('click', (event) => {
@@ -36,6 +44,8 @@ calcBtns.addEventListener('click', (event) => {
         return;
     }
     if (target.classList.contains('all-clear')) {
+        allClear();
+        resetDisplay();
         updateDisp();
         return;
     }
@@ -48,6 +58,8 @@ calcBtns.addEventListener('click', (event) => {
     updateDisp();
 });
 
+
+
 // Update the screen with the numbers
 function inputNumber(number) {
     const { dispValue, waitForSecondInput } = calc;
@@ -55,7 +67,13 @@ function inputNumber(number) {
         calc.dispValue = number;
         calc.waitForSecondInput = false;
     } else {
-        calc.dispValue = dispValue === '0' ? number : dispValue + number;
+        if (dispValue === '0') {
+            // If the number is greater then 0 replace the display value.
+            calc.dispValue = (number > 0) ? number : '0';
+        } else {
+            // When the display value is not 0 concat the number to it.
+            calc.dispValue = dispValue + number;
+        }
     }
     console.log(calc);
 }
@@ -75,9 +93,14 @@ function handleOperator(Oper) {
         calc.firstInput = input;
         calc.dispValue = 0;
     } else if (operator) {
-        const output = performCalc[operator](firstInput, input);
-        calc.dispValue = String(output);
-        calc.firstInput = input;
+        //const output = performCalc[operator](firstInput, input);
+        const func = performCalc[operator];
+        if (func) {
+            calc.dispValue = String(func(firstInput, input));
+            calc.firstInput = input;
+        }
+        // calc.dispValue = String(output);
+        // calc.firstInput = input;
     }
     calc.waitForSecondInput = true;
     calc.operator = Oper;
@@ -89,10 +112,10 @@ const deleteOne = () => {
 }
 
 const allClear = () => {
-    calc.dispValue = 0;
+    calc.dispValue = '0';
     calc.firstInput = null;
-    calc.operator = null;
     calc.waitForSecondInput = false;
+    calc.operator = null;
 }
 
 const performCalc = {
