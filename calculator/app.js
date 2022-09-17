@@ -88,19 +88,22 @@ function inputDecimal(val) {
 function handleOperator(Oper) {
     const { firstInput, dispValue, operator } = calc
     const input = parseFloat(dispValue);
-    console.log(firstInput);
+
     if (firstInput === null) {
         calc.firstInput = input;
         calc.dispValue = 0;
     } else if (operator) {
-        //const output = performCalc[operator](firstInput, input);
+
+        // Get the correct function or none if there's no match.
         const func = performCalc[operator];
         if (func) {
             calc.dispValue = String(func(firstInput, input));
             calc.firstInput = input;
+        } else {
+            // handle bad operator.
+            // EG: Throw an exception
+
         }
-        // calc.dispValue = String(output);
-        // calc.firstInput = input;
     }
     calc.waitForSecondInput = true;
     calc.operator = Oper;
