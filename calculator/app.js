@@ -6,14 +6,14 @@ const calc = new Calculator();
 
 // Reset the display.
 const resetDisplay = () => {
-    lower.textContent = calc.dispValue;
+    lower.textContent = calc.Value;
     upper.textContent = "";
 }
 
 // Update the display
 const updateDisp = () => {
-    lower.textContent = calc.dispValue;
-    upper.textContent = calc.dispEquation;
+    lower.textContent = calc.Value;
+    upper.textContent = calc.Equation;
 }
 updateDisp();
 
