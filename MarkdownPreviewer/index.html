@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Previewer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,300&family=Cookie&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <h1 id="page-header">MarkDown Previewer</h1>
+    </div>
+    <div class="containers">
+      <div class="container">
+        <p class="container-label">Editor</p>
+        <!-- editor updates previewer as typed-->
+        <textarea id="editor" class="pane">
+# Welcome to the Markdown Previewer!
+<hr>
+
+## This is a sub-heading...
+
+### here are some other cool features
+
+<em> make any changes to see the difference in the output</em>
+<br>
+**bold** <i> italic</i>
+<ul>
+    <li>point1</li>
+    <li>point2</li>
+    <li>point3</li>
+</ul>
+            </textarea
+        >
+      </div>
+
+      <div class="container">
+        <p class="container-label">
+          <select id="displayTypes">
+            <option value="preview">Preview</option>
+            <option value="html">HTML</option>
+          </select>
+        </p>
+        <!-- the output goes here  -->
+        <div id="preview" class="pane display">dfs</div>
+        <textarea id="html" readonly="readonly" class="pane display"></textarea>
+      </div>
+    </div>
+
+    <!-- script tag and marked cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
