@@ -13,14 +13,15 @@
   </head>
 
   <body>
-    <div class="header">
-      <h1 id="page-header">MarkDown Previewer</h1>
-    </div>
-    <div class="containers">
-      <div class="container">
-        <p class="container-label">Editor</p>
-        <!-- editor updates previewer as typed-->
-        <textarea id="editor" class="pane">
+    <article id="markdown">
+      <div class="header">
+        <h1 id="page-header">MarkDown Previewer</h1>
+      </div>
+      <div class="containers">
+        <div class="container">
+          <p class="container-label">Editor</p>
+          <!-- editor updates previewer as typed-->
+          <textarea id="editor" class="pane">
 # Welcome to the Markdown Previewer!
 <hr>
 
@@ -37,22 +38,26 @@
     <li>point3</li>
 </ul>
             </textarea
-        >
-      </div>
+          >
+        </div>
 
-      <div class="container">
-        <p class="container-label">
-          <select id="displayTypes">
-            <option value="preview">Preview</option>
-            <option value="html">HTML</option>
-          </select>
-        </p>
-        <!-- the output goes here  -->
-        <div id="preview" class="pane display">dfs</div>
-        <textarea id="html" readonly="readonly" class="pane display"></textarea>
+        <div class="container">
+          <p class="container-label">
+            <select id="display-types">
+              <option value="preview">Preview</option>
+              <option value="html">HTML</option>
+            </select>
+          </p>
+          <!-- the output goes here  -->
+          <div id="preview" class="pane display"></div>
+          <textarea
+            id="html"
+            readonly="readonly"
+            class="pane display"
+          ></textarea>
+        </div>
       </div>
-    </div>
-
+    </article>
     <!-- script tag and marked cdn  -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="./app.js"></script>

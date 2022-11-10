@@ -1,17 +1,14 @@
 const editorContent = document.getElementById('editor');
 const previewContent = document.getElementById('preview');
 const htmlContent = document.getElementById('html');
-const displayTypes = document.getElementById('displayTypes');
+const displayTypes = document.getElementById('display-types');
 let currentdisplay;
 
 const updatePreview = async () => {
-
     let editorText = await editorContent.value;
     let previewText = await marked.parse(editorText);
 
     currentdisplay.innerHTML = previewText;
-    // previewContent.innerHTML = previewText;
-    // htmlContent.innerHTML = previewText;
 }
 
 const updateDisplay = (e) => {
@@ -28,7 +25,9 @@ const updateDisplay = (e) => {
     updatePreview();
 }
 
+
 editorContent.addEventListener('input', updatePreview);
+
 displayTypes.addEventListener('change', e => {
     updateDisplay(e.target.value)
 });
