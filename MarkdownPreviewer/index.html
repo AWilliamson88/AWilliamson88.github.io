@@ -22,21 +22,66 @@
           <p class="container-label">Editor</p>
           <!-- editor updates previewer as typed-->
           <textarea id="editor" class="pane">
-# Welcome to the Markdown Previewer!
-<hr>
+# Markdown syntax guide
+---
 
-## This is a sub-heading...
+## Headings
 
-### here are some other cool features
+# Heading h1
+### Heading h3 
+##### Heading h5
 
-<em> make any changes to see the difference in the output</em>
-<br>
-**bold** <i> italic</i>
-<ul>
-    <li>point1</li>
-    <li>point2</li>
-    <li>point3</li>
-</ul>
+## Emphasis
+
+*This text is italic*  
+_This is also italic_
+
+**This text is bold**  
+__This is also bold__
+
+_You **can** combine them_
+
+## Lists
+
+### Unordered
+
+* Task
+  * Sub-Task 1
+* Task
+* Task
+* Task
+
+### Ordered
+
+1. The numbers can all be 1's.
+1. Task
+1. Task
+    1. Don't forget sub-lists.
+    1. Task
+
+## Links
+
+Check out the rest of my portfolio [My Portfolio](https://awilliamson88.github.io/).
+
+## Blockquotes
+
+> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
+
+>> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+## Tables
+
+| Left columns  | Right columns |
+| ------------- |:-------------:|
+| left foo      | right foo     |
+| left bar      | right bar     |
+| left baz      | right baz     |
+
+_The : in the right column changes the text alignment._
+
+## Gratitude
+
+This web site is using `markedjs/marked`.
             </textarea
           >
         </div>
