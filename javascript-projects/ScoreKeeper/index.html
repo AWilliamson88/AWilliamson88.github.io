@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>score Keeper</title>
+</head>
+
+<body>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter is-one-third-desktop is-offset-one-third-desktop">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is2by1">
+                                <img src="https://cdn.pixabay.com/photo/2012/04/05/01/46/bat-25764_960_720.png"
+                                    alt="ping pong picture">
+                            </figure>
+
+                        </div>
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Ping Pong Score Keeper
+                            </p>
+                        </header>
+
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="columns">
+                                    <div class="column is-two-fifths">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <input class="input is-size-5" id="p1Name" name="p1Name"
+                                                            type="text" value="Player1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="content title is-1 has-text-centered">
+                                                    <b id="score1">0</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-two-fifths is-offset-one-fifth">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <input class="input is-size-5" id="p2Name" name="p2Name"
+                                                            type="text" value="Player 2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="content title is-1 has-text-centered">
+                                                    <b class=" is-centered" id="score2">0</b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="subtitle">
+                                    Use the buttons below to keep score.
+                                </p>
+
+                                <label class="label is-large is-inline">Max Score</label>
+                                <div class="select is-rounded is-small">
+                                    <select name="maxscore" id="maxscore-select">
+                                        <option value="10">10</option>
+                                        <option value="9">9</option>
+                                        <option value="8">8</option>
+                                        <option value="7">7</option>
+                                        <option value="6">6</option>
+                                        <option value="5">5</option>
+                                        <option value="4">4</option>
+                                        <option value="3">3</option>
+                                        <option value="2">2</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button class="button is-primary card-footer-item" id="p1btn">+1 Player One</button>
+                            <button class="button is-link card-footer-item" id="p2btn">+1 Player Two</button>
+                            <button class="button is-danger card-footer-item" id="reset">Reset</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
